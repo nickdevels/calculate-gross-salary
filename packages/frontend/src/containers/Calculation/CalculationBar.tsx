@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useContext, useEffect, useReducer } from 'react';
+import React, { useCallback, useState, useContext, useEffect } from 'react';
 import { Grid, TextField, Button } from '@material-ui/core';
 import { FieldError } from '../../components/FieldError';
 import * as yup from 'yup';
@@ -15,9 +15,9 @@ const schema = yup.object().shape({
 });
 
 const CalculationBar: React.FC = () => {
-  const [state, dispatch] = useContext(Context);
+  const [, dispatch] = useContext(Context);
   const [grossSalary, setSalary] = useState(0);
-  const { response, loading, error } = useAxios({
+  const { response, loading } = useAxios({
     url: '/api/calculate-tax',
     method: 'POST',
     options: {

@@ -10,9 +10,7 @@ export const CalculationTableOptions = (): MUIDataTableOptions => {
     filter: true,
     viewColumns: false,
     selectableRows: 'none',
-    customToolbarSelect: () => {
-      return <div />;
-    },
+    customToolbarSelect: React.Fragment,
     responsive: 'stacked',
     rowsPerPage: 100,
     rowsPerPageOptions: [100],

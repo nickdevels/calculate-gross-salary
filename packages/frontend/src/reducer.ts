@@ -1,12 +1,13 @@
-import { CalculatedSalaryData, StateValues } from './Store';
+import { StateValues } from './Store';
+import { CalculatedSalaryData } from '@salary/common';
 
 interface Action<T = string, P = {}> {
   type: T;
   payload: P;
 }
 
-type DataAction = Action<'POST_SALARY', CalculatedSalaryData>;
-type ErrorAction = Action<'SET_ERROR', string>;
+export type DataAction = Action<'POST_SALARY', CalculatedSalaryData>;
+export type ErrorAction = Action<'SET_ERROR', string>;
 
 const Reducer = (state: StateValues, action: DataAction | ErrorAction): StateValues => {
   switch (action.type) {

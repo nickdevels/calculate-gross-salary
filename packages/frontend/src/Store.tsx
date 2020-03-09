@@ -1,5 +1,5 @@
 import React, { createContext, Dispatch, useReducer } from 'react';
-import Reducer from './reducer';
+import Reducer, { DataAction, ErrorAction } from './reducer';
 import { CalculatedSalaryData } from '@salary/common';
 
 export interface StateValues {
@@ -14,7 +14,7 @@ const initialState: StateValues = {
 
 const noop = (): void => undefined;
 
-type ContextValues = [StateValues, Dispatch<any>];
+type ContextValues = [StateValues, Dispatch<DataAction | ErrorAction>];
 
 export const Context = createContext<ContextValues>([initialState, noop]);
 

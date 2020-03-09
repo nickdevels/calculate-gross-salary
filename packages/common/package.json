@@ -13,7 +13,7 @@
   "scripts": {
     "build": "tsc -b",
     "clean": "rimraf ./dist",
-    "lint": "tsc --noEmit && eslint */**/*.ts",
+    "lint": "eslint */**/*.ts",
     "lint:fix": "yarn lint --fix"
   },
   "devDependencies": {

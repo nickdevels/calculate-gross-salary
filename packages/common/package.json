@@ -1,0 +1,23 @@
+{
+  "name": "@salary/common",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "Nick <nickdevels@gmail.com>",
+  "homepage": "",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "clean": "rimraf ./dist",
+    "lint": "tsc --noEmit && eslint */**/*.ts",
+    "lint:fix": "yarn lint --fix"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2",
+    "typescript": "^3.8.3"
+  }
+}

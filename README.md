@@ -6,6 +6,8 @@ You will need node.js env up and running.
 
 Install dependencies: `$ yarn`
 
+Build (need to build dependencies): `$ yarn build`
+
 Run app: `$ yarn start`
 
 ## Project structure

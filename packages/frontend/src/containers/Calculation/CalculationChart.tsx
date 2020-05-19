@@ -27,13 +27,12 @@ const series: ChartSeries[] = [
 
 const CalculationChart: React.FC = () => {
   const [state] = useContext(Context);
-  if (!state.salaryMonths) {
-    return <></>;
-  }
-  const { chartData } = state.salaryMonths;
-  const data = useMemo(() => series.map(({ name, field }) => ({ name, value: chartData[field] })), [
-    chartData,
-  ]);
+
+  const { chartData } = state.salaryMonths ?? {};
+  const data = useMemo(
+    () => series.map(({ name, field }) => ({ name, value: chartData?.[field] })),
+    [chartData],
+  );
   const [selection, setSelection] = useState<TargetList>([]);
 
   const compare = (
@@ -47,6 +46,11 @@ const CalculationChart: React.FC = () => {
       setSelection((selection) => (selection[0] && compare(selection[0], target) ? [] : [target]));
     }
   }, []);
+
+  if (!state.salaryMonths) {
+    return <></>;
+  }
+
   return (
     <Paper>
       <Chart data={data}>

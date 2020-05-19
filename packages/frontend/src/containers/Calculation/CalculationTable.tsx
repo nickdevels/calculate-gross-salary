@@ -10,12 +10,13 @@ const CalculationTable: React.FC = () => {
 
   const columns = columnsNames;
 
-  if (!state.salaryMonths) {
-    return <CalculationCard />;
-  }
-  const { tableData } = state.salaryMonths;
+  const { tableData } = state.salaryMonths ?? {};
 
   const options: MUIDataTableOptions = useMemo(() => CalculationTableOptions(), []);
+
+  if (!state.salaryMonths || !tableData) {
+    return <CalculationCard />;
+  }
 
   return (
     <MUIDataTable title={'Calculation'} data={tableData} columns={columns} options={options} />

@@ -47,7 +47,9 @@ const CalculationCard: React.FC = () => {
             <Link color="inherit" href="https://www.linkedin.com/in/nikita-osaulenko-1b0927178/">
               {`My LinkedIn link `}
             </Link>
-            <div>{time}</div>
+          </Typography>
+          <Typography variant="body2" color="textSecondary" align="center">
+            {time}
           </Typography>
         </Box>
       </Container>

@@ -18,7 +18,7 @@ const CalculationBar: React.FC = () => {
   const [, dispatch] = useContext(Context);
   const [grossSalary, setSalary] = useState(0);
   const { response, loading } = useAxios({
-    url: '/api/calculate-tax',
+    url: 'http://localhost:4040/api/calculate-tax',
     method: 'POST',
     options: {
       data: {
